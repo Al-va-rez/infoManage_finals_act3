@@ -40,7 +40,7 @@ $menu = [
             <ul>
                 <?php
                     foreach ($menu as $item => $price) {
-                        echo '<li>'. $item . ' - PHP ' . $menu[$item] . '</li>';
+                        echo '<li>'. $item . ' - PHP ' . $price . '</li>';
                     }
                 ?>
             </ul>
@@ -85,17 +85,17 @@ $menu = [
                         $user_Order_Quantity = $_POST['food_quantity'];
                         $user_Payment = $_POST['payment'];
 
-                        $subtotal = $menu[$user_Food_Order] * $user_Order_Quantity;
+                        $total = $menu[$user_Food_Order] * $user_Order_Quantity;
                         $change = $user_Payment - $subtotal;
 
                         echo '<h3>You ordered: ' . $user_Food_Order . '</h3>';
                         echo '<h3>Quantity: ' . $user_Order_Quantity . '</h3>';
-                        echo '<h3>Total price is: ' . $subtotal . '</h3>';
+                        echo '<h3>Total price is: ' . $total . '</h3>';
                         echo '<h3>Your payment is: ' . $user_Payment . '</h3>';
 
                         // check if amount paid is correct
-                        if ($user_Payment >= $subtotal) {
-                            if ($user_Payment > $subtotal) {
+                        if ($user_Payment >= $total) {
+                            if ($user_Payment > $total) { // if there is change
                                 echo '<h3>Your change is: '. $change . '</h3>';
                             }
                             echo '<h2>Thank you! Enjoy your meal!</h2>';
