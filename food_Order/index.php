@@ -103,7 +103,7 @@ $menu = [
                             echo '<h2><u>Not enough cash</u></h2>';
                         }
                     }
-                    // check if a text fields remaines empty
+                    // check if a text field remaines empty
                     else if ($_POST['food_quantity'] == '' || $_POST['payment'] == '') {
                         echo '<h2>THERE ARE MISSING INFORMATION</h2>';
                     }
